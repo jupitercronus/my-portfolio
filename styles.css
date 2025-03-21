@@ -7,6 +7,10 @@
 }
 
 body {
+    min-height: 100vh;
+    height: auto;
+    background-attachment: fixed;
+    background-size: cover;
     height: auto; /* Allow content to expand naturally */
     min-height: 100vh; /* Ensure full viewport coverage */
     font-family: 'VT323', monospace;
