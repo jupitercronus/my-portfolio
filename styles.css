@@ -1,45 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Gabarito:wght@400;700&display=swap');
+/* Manually Integrating Aesthetic CSS */
 
 body {
-    background: radial-gradient(circle, #3f5efb 0%, #ff8ba3 100%);
-    font-family: 'Gabarito', sans-serif;
+    font-family: 'VT323', monospace;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
     color: #fff7c0;
+    text-align: center;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
-h1, h2, h3 {
-    font-family: 'VT323', monospace;
-    color: #fff7c0;
-    transition: transform 0.2s;
+.video-container {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
 }
 
-h1:hover, h2:hover, h3:hover {
-    transform: translateY(-2px);
-}
-
-button {
-    font-family: 'Gabarito', sans-serif;
-    background-color: #fff7c0;
-    color: #3f5efb;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #b8e4ff;
-}
-
-video {
+.video-container iframe {
     width: 100%;
-    max-width: 800px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.nav-button {
+    font-size: 20px;
+    padding: 12px 24px;
+    background: #ff8ba3;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+    background: #b8e4ff;
+    transform: scale(1.05);
 }
