@@ -1,4 +1,4 @@
-/* Updated styles.css with grid overlay fix and better video layout */
+/* Updated styles.css - Fixing background visibility */
 
 * {
     box-sizing: border-box;
@@ -6,7 +6,6 @@
 
 body {
     font-family: 'VT323', monospace;
-    background-color: #2b1165;
     background: linear-gradient(180deg, #2b1165 0%, #1a3a82 37%, #ab24b1 69%, #f54171 100%);
     margin: 0;
     padding: 0;
@@ -22,7 +21,7 @@ body {
 /* Ensure Grid Overlay is Visible */
 .overlay {
     display: block;
-    position: fixed;  /* Ensures it stays on top */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -31,9 +30,8 @@ body {
     background-size: 5px 5px, 5px 5px;
     background-position: -1px -1px, -1px -1px;
     background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    mix-blend-mode: difference;
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     z-index: 10;
     pointer-events: none;
 }
