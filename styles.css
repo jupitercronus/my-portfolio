@@ -1,14 +1,56 @@
-/* Manually Integrating Aesthetic CSS */
+/* Updated styles.css with glitch background and grid overlay */
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'VT323', monospace;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
-    color: #fff7c0;
-    text-align: center;
+    background-color: #2b1165;
+    background: linear-gradient(180deg, #2b1165 0%, #1a3a82 37%, #ab24b1 69%, #f54171 100%);
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Grid Overlay */
+.overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    background-size: 5px 5px, 5px 5px;
+    background-position: -1px -1px, -1px -1px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    mix-blend-mode: difference;
+}
+
+/* Glitch Effect for Title */
+.glitch {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff7c0;
+    position: relative;
+    animation: glitch 1s infinite alternate;
+}
+
+@keyframes glitch {
+    0% { transform: translateX(0.5px) skewX(5deg); }
+    100% { transform: translateX(-0.5px) skewX(-5deg); }
+}
+
+/* Video Container */
 .video-container {
     position: relative;
     width: 80%;
