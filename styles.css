@@ -1,4 +1,4 @@
-/* Updated styles.css - Fixed syntax issues & hover animations */
+/* Updated styles.css - Fixed mobile background issue */
 
 * {
     box-sizing: border-box;
@@ -9,15 +9,19 @@
 body {
     min-height: 100vh;
     height: auto;
-    background-attachment: fixed;
     background-size: cover;
-    height: auto; /* Allow content to expand naturally */
-    min-height: 100vh; /* Ensure full viewport coverage */
     font-family: 'VT323', monospace;
     background: linear-gradient(180deg, #2b1165 0%, #1a3a82 37%, #ab24b1 69%, #f54171 100%) !important;
     overflow: hidden;
     position: relative;
     cursor: url('prank-left-mouse.png'), auto;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: auto 100%;
+        background-position: center;
+    }
 }
 
 /* Grid Overlay */
@@ -105,10 +109,4 @@ h2:hover {
 .nav-button:last-child:hover {
     background: #b8e4ff;
     transform: scale(1.1) rotate(-2deg);
-}
-    background: #b8e4ff;
-    transform: scale(1.1) rotate(-2deg);
-}
-    background: #b8e4ff;
-    transform: scale(1.1) rotate(2deg);
 }
