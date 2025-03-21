@@ -1,4 +1,4 @@
-/* Updated styles.css with glitch background and grid overlay */
+/* Updated styles.css with grid overlay fix and better video layout */
 
 * {
     box-sizing: border-box;
@@ -19,10 +19,10 @@ body {
     overflow: hidden;
 }
 
-/* Grid Overlay */
+/* Ensure Grid Overlay is Visible */
 .overlay {
     display: block;
-    position: absolute;
+    position: fixed;  /* Ensures it stays on top */
     top: 0;
     left: 0;
     width: 100vw;
@@ -30,34 +30,20 @@ body {
     background-color: transparent;
     background-size: 5px 5px, 5px 5px;
     background-position: -1px -1px, -1px -1px;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     mix-blend-mode: difference;
+    z-index: 10;
+    pointer-events: none;
 }
 
-/* Glitch Effect for Title */
-.glitch {
-    display: inline-block;
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff7c0;
-    position: relative;
-    animation: glitch 1s infinite alternate;
-}
-
-@keyframes glitch {
-    0% { transform: translateX(0.5px) skewX(5deg); }
-    100% { transform: translateX(-0.5px) skewX(-5deg); }
-}
-
-/* Video Container */
+/* Fix Video Layout */
 .video-container {
     position: relative;
     width: 80%;
     max-width: 900px;
     margin: 40px auto;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
 }
 
