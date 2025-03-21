@@ -1,90 +1,72 @@
-/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Gabarito:wght@400;700&display=swap');
+
 body {
-    background: linear-gradient(to bottom, #1a1a2e, #16213e);
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #3f5efb 0%, #ff8ba3 100%);
+    color: #fff7c0; /* Soft yellow for body text */
+    font-family: 'Gabarito', sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-/* Pixel Font for Titles */
-@font-face {
-    font-family: 'PixelFont';
-    src: url('pixel-font.woff2') format('woff2');
-}
-
-h1 {
-    font-family: 'PixelFont', sans-serif;
-    font-size: 2rem;
-    color: #ff00ff;
-    transition: transform 0.2s ease-in-out;
-}
-
-h1:hover {
-    transform: translateX(5px);
-}
-
-/* Navigation Styles */
-.menu-container {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+h1, h2, h3 {
+    font-family: 'Boldonse', sans-serif;
+    color: #b8e4ff; /* Light cyan for titles */
 }
 
 .menu-button {
     background: none;
-    border: 2px solid #ff00ff;
-    color: #ff00ff;
-    font-size: 1.5rem;
-    padding: 5px 10px;
+    border: none;
+    font-size: 24px;
+    color: #b8e4ff; /* Matching title color */
     cursor: pointer;
+    padding: 10px;
 }
 
 .sidebar {
-    position: absolute;
-    top: 50px;
-    left: 10px;
     background: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    display: none;
-    border-radius: 5px;
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
 }
 
 .sidebar.open {
-    display: block;
+    transform: translateX(0);
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-}
-
-.sidebar ul li {
-    margin: 10px 0;
 }
 
 .sidebar a {
-    color: #00ffff;
+    color: #fff7c0; /* Soft yellow for readability */
     text-decoration: none;
+    display: block;
+    padding: 10px;
 }
 
 .sidebar a:hover {
-    color: #ff00ff;
+    color: #b8e4ff; /* Light cyan on hover */
 }
 
-/* Video Styling */
-video {
-    width: 80%;
-    max-width: 800px;
-    margin: 20px 0;
-    border: 3px solid #ff00ff;
+button:focus {
+    outline: none;
+}
+
+/* Title hover animation */
+h1:hover, h2:hover, h3:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease-in-out;
 }
 
 /* Footer */
 footer {
     margin-top: 20px;
-    font-size: 0.8rem;
-    color: #aaaaaa;
+    font-size: 14px;
 }
