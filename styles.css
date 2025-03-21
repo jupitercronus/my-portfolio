@@ -10,7 +10,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'Boldonse', sans-serif;
+    font-family: 'VT323', monospace;
     color: #fff7c0;
     transition: transform 0.2s;
 }
