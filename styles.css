@@ -2,8 +2,8 @@
 
 body {
     background: radial-gradient(circle, #3f5efb 0%, #ff8ba3 100%);
-    color: #fff7c0; /* Soft yellow for body text */
     font-family: 'Gabarito', sans-serif;
+    color: #fff7c0;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -11,62 +11,35 @@ body {
 
 h1, h2, h3 {
     font-family: 'Boldonse', sans-serif;
-    color: #b8e4ff; /* Light cyan for titles */
+    color: #fff7c0;
+    transition: transform 0.2s;
 }
 
-.menu-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #b8e4ff; /* Matching title color */
-    cursor: pointer;
-    padding: 10px;
-}
-
-.sidebar {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 200px;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-}
-
-.sidebar.open {
-    transform: translateX(0);
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar a {
-    color: #fff7c0; /* Soft yellow for readability */
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-}
-
-.sidebar a:hover {
-    color: #b8e4ff; /* Light cyan on hover */
-}
-
-button:focus {
-    outline: none;
-}
-
-/* Title hover animation */
 h1:hover, h2:hover, h3:hover {
     transform: translateY(-2px);
-    transition: transform 0.2s ease-in-out;
 }
 
-/* Footer */
-footer {
-    margin-top: 20px;
-    font-size: 14px;
+button {
+    font-family: 'Gabarito', sans-serif;
+    background-color: #fff7c0;
+    color: #3f5efb;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #b8e4ff;
+}
+
+video {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
