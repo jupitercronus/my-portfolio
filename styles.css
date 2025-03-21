@@ -19,8 +19,9 @@ body {
 
 @media (max-width: 768px) {
     body {
-        background-size: auto 100%;
-        background-position: center;
+        background-size: 100% 100%; /* Force background to fill screen */
+        background-repeat: no-repeat; /* Prevent tiling */
+        background-position: center center; /* Keep gradient centered */
     }
 }
 
