@@ -46,7 +46,7 @@ h1 {
 }
 
 h1:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(2deg);
 }
 
 h2 {
@@ -55,7 +55,7 @@ h2 {
 }
 
 h2:hover {
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(-2deg);
 }
 
 /* Video Container */
@@ -93,7 +93,18 @@ h2:hover {
     text-decoration: none;
 }
 
-.nav-button:hover {
+.nav-button:first-child:hover {
+    background: #b8e4ff;
+    transform: scale(1.1) rotate(2deg);
+}
+
+.nav-button:last-child:hover {
+    background: #b8e4ff;
+    transform: scale(1.1) rotate(-2deg);
+}
+    background: #b8e4ff;
+    transform: scale(1.1) rotate(-2deg);
+}
     background: #b8e4ff;
     transform: scale(1.1) rotate(2deg);
 }
