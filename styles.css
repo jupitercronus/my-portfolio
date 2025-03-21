@@ -1,0 +1,16 @@
+/* Global Styles */
+body {
+    font-family: "Courier New", Courier, monospace;
+    background-color: white;
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Navigation Bar */
+nav {
+    margin-bottom: 20px;
+}
+nav ul {
+    list-style-type: n
