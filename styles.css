@@ -248,6 +248,7 @@ input:focus, textarea:focus {
 /* Button Styling - Ensuring Consistency */
 .nav-button, .contact-form button, .nav-button a {
     text-decoration: none;
+    font-family: 'VT323', monospace;
     width: 200px; /* Ensures both buttons are the same width */
     padding: 12px 24px;
     font-size: 1rem;
