@@ -1,4 +1,4 @@
-/* Updated styles.css - Includes scan line, grid behind content, refined animated background, and pixelated static effect */
+/* Updated styles.css - Moving navigation buttons above video and adding download button next to them */
 
 * {
     box-sizing: border-box;
@@ -7,7 +7,7 @@
     text-transform: lowercase; /* Ensure all text stays lowercase */
 }
 
-html, body {
+html, body, body.vp-center {
     min-height: 100vh;
     height: 100%;
     width: 100%;
@@ -18,8 +18,8 @@ html, body {
     font-family: 'VT323', monospace;
     overflow: hidden;
     position: relative;
-    cursor: url('prank-left-mouse.png'), auto;
-    text-align: center; /* Center align all text */
+    cursor: url('prank-left-mouse.png'), auto !important;
+    text-align: center;
     animation: pulseBackground 10s infinite alternate ease-in-out, glitchFlicker 3s step-end infinite;
 }
 
@@ -34,31 +34,76 @@ html, body {
     50% { filter: brightness(1.02) contrast(1.02); }
 }
 
-/* Fire Effect grouped with h1 and h2 */
+/* Header Container */
 .header-container {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 300px;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    z-index: 2;
 }
 
-.fire-container {
-    position: absolute;
-    width: 100%;
-    height: 200px;
-    background: rgba(0, 110, 255, 0.311);
-    mix-blend-mode: screen;
-    animation: fireFlicker 1.5s infinite alternate ease-in-out;
-    pointer-events: none;
-    z-index: -1;
+/* Title and Subtitle Styling */
+.header-container h1, .header-container h2 {
+    color: #fff7c0 !important;
+    text-transform: lowercase;
+    position: relative;
+    z-index: 2;
+    margin: 0;
 }
 
-@keyframes fireFlicker {
-    0% { transform: scaleY(1); opacity: 0.8; }
-    50% { transform: scaleY(1.1); opacity: 0.9; }
-    100% { transform: scaleY(1); opacity: 0.8; }
+.header-container h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.header-container h1:hover {
+    transform: scale(1.1) rotate(1deg);
+}
+
+.header-container h2 {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.header-container h2:hover {
+    transform: scale(1.1) rotate(-1deg);
+}
+
+.header-container::after {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 2px;
+    background-color: #fff7c0;
+    margin: 20px auto 0;
+}
+
+    /* Navigation and Download Button Container */
+.nav-download-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* PDF Download Button as Image */
+.download-image {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    transition: transform 0.2s ease;
+    cursor: url('prank-left-cursor-pack.png'), pointer;
+}
+
+.download-image:hover {
+    transform: scale(1.5) rotate(2deg);
 }
 
 /* Background container to keep effects behind content */
@@ -81,7 +126,7 @@ html, body {
     width: 100%;
     height: 100%;
     background: url('static-noise.gif'); /* Add a noise GIF or use CSS */
-    opacity: 0.08; /* Subtle effect */
+    opacity: 0.08;
     animation: staticMove 1s steps(4) infinite;
 }
 
@@ -104,30 +149,12 @@ html, body {
         linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
 }
 
-/* Title and Subtitle Styling */
-h1, h2 {
-    color: #fff7c0; /* Soft yellow */
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-transform: lowercase;
-}
-
-h1 {
-    font-size: 3rem;
-    margin-top: 50px;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-top: 5px; /* Reduce space between h1 and h2 */
-    margin-bottom: 30px;
-}
-
 /* Video Container */
 .video-container {
     width: 100%;
     max-width: 1080px;
-    margin: 40px auto;
+    margin: 20px auto 40px;
+    cursor: url('prank-left-mouse.png'), auto !important; /* Ensuring custom cursor on video container */
 }
 
 .video-container iframe {
@@ -135,6 +162,7 @@ h2 {
     height: 500px;
     border: none;
     border-radius: 10px;
+    cursor: url('prank-left-mouse.png'), auto !important; /* Ensuring custom cursor on video container */
 }
 
 /* Button Styling */
@@ -142,7 +170,6 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
     gap: 20px;
 }
 
@@ -152,7 +179,7 @@ h2 {
     padding: 12px 24px;
     background: #ff8ba3;
     color: #1a1a2e;
-    border: none;
+    border: 2px solid #e65a21;
     border-radius: 8px;
     transition: background 0.3s ease, transform 0.2s ease;
     text-decoration: none;
