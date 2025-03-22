@@ -1,9 +1,10 @@
-/* Updated styles.css - Added floating portal-container */
+/* Updated styles.css - Includes scan line, grid behind content, refined animated background, and pixelated static effect */
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-transform: lowercase; /* Ensure all text stays lowercase */
 }
 
 html, body {
@@ -11,21 +12,82 @@ html, body {
     height: 100%;
     width: 100%;
     background: linear-gradient(180deg, #2b1165 0%, #1a3a82 37%, #ab24b1 69%, #f54171 100%) !important;
-    background-size: cover !important;
+    background-size: 100% 100% !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
     font-family: 'VT323', monospace;
     overflow: hidden;
     position: relative;
     cursor: url('prank-left-mouse.png'), auto;
+    text-align: center; /* Center align all text */
+    animation: pulseBackground 10s infinite alternate ease-in-out, glitchFlicker 3s step-end infinite;
 }
 
-@media (max-width: 768px) {
-    body {
-        background-size: 100% 100%; /* Force background to fill screen */
-        background-repeat: no-repeat; /* Prevent tiling */
-        background-position: center center; /* Keep gradient centered */
-    }
+/* Background animation effects */
+@keyframes pulseBackground {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes glitchFlicker {
+    0%, 100% { filter: brightness(1) contrast(1); }
+    50% { filter: brightness(1.02) contrast(1.02); }
+}
+
+/* Fire Effect grouped with h1 and h2 */
+.header-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+
+.fire-container {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background: rgba(0, 110, 255, 0.311);
+    mix-blend-mode: screen;
+    animation: fireFlicker 1.5s infinite alternate ease-in-out;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes fireFlicker {
+    0% { transform: scaleY(1); opacity: 0.8; }
+    50% { transform: scaleY(1.1); opacity: 0.9; }
+    100% { transform: scaleY(1); opacity: 0.8; }
+}
+
+/* Background container to keep effects behind content */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2; /* Keeps it behind the content */
+    pointer-events: none;
+}
+
+/* Static Noise Effect inside Background Container */
+.background-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('static-noise.gif'); /* Add a noise GIF or use CSS */
+    opacity: 0.08; /* Subtle effect */
+    animation: staticMove 1s steps(4) infinite;
+}
+
+@keyframes staticMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
 }
 
 /* Grid Overlay */
@@ -40,68 +102,31 @@ html, body {
     background-image: 
         linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    z-index: 0; /* Ensures it's above the background but below content */
-    pointer-events: none;
-}
-
-/* Floating Portal Container */
-.portal-container {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 320px;
-    height: 280px;
-    border: 2px solid #ff00ff;
-    background: #000000;
-    z-index: -1; /* Keeps it behind the title */
-    box-shadow: 
-        0 0 10px #ff00ff,
-        0 0 20px #00ffff;
-    overflow: hidden;
-}
-
-.title-bar {
-    background: linear-gradient(90deg, #ff00ff, #00ffff);
-    padding: 3px;
-    color: white;
-    font-size: 14px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-shadow: 2px 2px #000;
 }
 
 /* Title and Subtitle Styling */
 h1, h2 {
-    text-align: center;
-    color: #fff7c0;
+    color: #fff7c0; /* Soft yellow */
+    font-size: 2rem;
+    margin-bottom: 20px;
     text-transform: lowercase;
-    transition: transform 0.3s ease-in-out;
 }
 
 h1 {
-    margin-top: 40px;
     font-size: 3rem;
-}
-
-h1:hover {
-    transform: scale(1.1) rotate(2deg);
+    margin-top: 50px;
 }
 
 h2 {
-    margin-bottom: 30px;
     font-size: 2rem;
-}
-
-h2:hover {
-    transform: scale(1.1) rotate(-2deg);
+    margin-top: 5px; /* Reduce space between h1 and h2 */
+    margin-bottom: 30px;
 }
 
 /* Video Container */
 .video-container {
     width: 100%;
-    max-width: 1080px; /* Adjusted max width */
+    max-width: 1080px;
     margin: 40px auto;
 }
 
@@ -131,6 +156,7 @@ h2:hover {
     border-radius: 8px;
     transition: background 0.3s ease, transform 0.2s ease;
     text-decoration: none;
+    text-transform: lowercase;
 }
 
 .nav-button:first-child:hover {
