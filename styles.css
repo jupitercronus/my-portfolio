@@ -34,7 +34,7 @@ html, body {
 
 /* Grid Overlay */
 .overlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
@@ -44,9 +44,10 @@ html, body {
     background-image: 
         linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    z-index: -10; /* Keeps it behind content */
+    z-index: 0; /* Ensures it's above the background but below content */
     pointer-events: none;
 }
+
 
 /* Title and Subtitle Styling */
 h1, h2 {
