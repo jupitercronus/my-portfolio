@@ -1,4 +1,4 @@
-/* Updated styles.css - Fixed mobile background issue */
+/* Updated styles.css - Added floating portal-container */
 
 * {
     box-sizing: border-box;
@@ -14,11 +14,7 @@ html, body {
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
-    min-height: 100vh;
-    height: auto;
-    background-size: cover;
     font-family: 'VT323', monospace;
-    background: linear-gradient(180deg, #2b1165 0%, #1a3a82 37%, #ab24b1 69%, #f54171 100%) !important;
     overflow: hidden;
     position: relative;
     cursor: url('prank-left-mouse.png'), auto;
@@ -48,6 +44,33 @@ html, body {
     pointer-events: none;
 }
 
+/* Floating Portal Container */
+.portal-container {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 280px;
+    border: 2px solid #ff00ff;
+    background: #000000;
+    z-index: -1; /* Keeps it behind the title */
+    box-shadow: 
+        0 0 10px #ff00ff,
+        0 0 20px #00ffff;
+    overflow: hidden;
+}
+
+.title-bar {
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    padding: 3px;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 2px 2px #000;
+}
 
 /* Title and Subtitle Styling */
 h1, h2 {
