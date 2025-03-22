@@ -16,7 +16,7 @@ html, body, body.vp-center {
     background-repeat: no-repeat !important;
     background-position: center center !important;
     font-family: 'VT323', monospace;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
     cursor: url('prank-left-mouse.png'), auto !important;
     text-align: center;
@@ -264,4 +264,27 @@ input:focus, textarea:focus {
 .nav-button:hover, .contact-form button:hover {
     background: #b8e4ff;
     transform: scale(1.1) rotate(-2deg);
+}
+/* Responsive Nav Buttons */
+
+@media (max-width: 600px) {
+    .nav-download-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .nav-button {
+        width: 100%;
+        max-width: 250px;
+    }
 }
