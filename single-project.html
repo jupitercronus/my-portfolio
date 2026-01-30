@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title | Irem Dogancali</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Specific override to make nav visible on white background pages */
+        .navbar { color: black; mix-blend-mode: normal; }
+        .resume-btn { border-color: black; }
+        .resume-btn:hover { background: black; color: white; }
+
+        /* Mute Button Styles */
+        .mute-btn {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 8px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            text-transform: lowercase;
+            z-index: 20;
+            transition: all 0.3s ease;
+        }
+
+        .mute-btn:hover {
+            background: white;
+            color: black;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV (Same as Index, but styled for light background) -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">ID</a>
+        <div class="nav-links">
+            <a href="index.html#home" class="nav-link">Home</a>
+            <a href="index.html#work" class="nav-link">Work</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+            <a href="DOGANCALI_RESUME 2025.pdf" download class="resume-btn">Resume</a>
+        </div>
+    </nav>
+
+    <!-- MAIN PROJECT CONTENT -->
+    <main>
+        <!-- The Player -->
+        <div class="single-project-hero" style="position: relative;">
+            <!-- Added id="project-video" and API params -->
+            <iframe id="project-video" 
+                    src="https://player.vimeo.com/video/217581697?title=0&byline=0&portrait=0&muted=1&autoplay=1" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+            
+            <!-- Mute Toggle Button -->
+            <button id="mute-toggle" class="mute-btn">sound on</button>
+        </div>
+
+        <!-- The Description -->
+        <div class="single-project-content">
+            <h1>Commercial Reel '24</h1>
+            <h2 style="margin-bottom: 40px; color: var(--text-muted);">Lead Editor • Premiere Pro</h2>
+
+            <p>
+                A collection of my best commercial work from 2023-2024. 
+                Focusing on rhythm, pacing, and narrative structure within short-form content.
+                <br><br>
+                <strong>Client:</strong> Various<br>
+                <strong>Role:</strong> Editor, Colorist<br>
+                <strong>Year:</strong> 2024
+            </p>
+
+            <br><br>
+            <a href="index.html#work" style="text-decoration: underline;">← Back to all projects</a>
+        </div>
+    </main>
+
+    <!-- Vimeo Player API -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+        const iframe = document.querySelector('#project-video');
+        const player = new Vimeo.Player(iframe);
+        const btn = document.getElementById('mute-toggle');
+
+        // Toggle Mute on Click
+        btn.addEventListener('click', function() {
+            player.getMuted().then(function(muted) {
+                player.setMuted(!muted).then(function() {
+                    // Update button text based on new state
+                    btn.textContent = !muted ? 'sound on' : 'sound off';
+                });
+            });
+        });
+
+        // Ensure button matches initial state (which is muted=1 in HTML)
+        player.getMuted().then(function(muted) {
+            btn.textContent = muted ? 'sound on' : 'sound off';
+        });
+    </script>
+
+</body>
+</html>

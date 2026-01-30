@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Irem Dogancali</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="page-wrapper">
+        <header class="header-minimal">
+            <a href="index.html" class="btn-link">← back home</a>
+        </header>
+
+        <div class="contact-wrapper">
+            <!-- Left Side: Text -->
+            <div class="contact-info">
+                <h1>let's make<br>something<br>great.</h1>
+                <h2 style="margin-top:20px; color:var(--text-muted);">Available for freelance editorial & producing.</h2>
+                <br>
+                <p style="font-family:var(--font-mono);">irem@example.com</p>
+            </div>
+
+            <!-- Right Side: Form -->
+            <form name="contact" method="POST" data-netlify="true" class="form-style">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+
+    </main>
+
+</body>
+</html>

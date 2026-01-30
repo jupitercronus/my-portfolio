@@ -7,40 +7,142 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background-container">
-        <div class="overlay"></div> <!-- Grid Overlay -->
-        <div class="static-noise"></div>
-    </div>
-    
-    <main>
-        <div class="header-container">
-            <h1>irem dogancali</h1>
-            <h2>editor | producer</h2>
+
+    <!-- 1. HERO SECTION (Full Screen Video) -->
+    <section id="home" class="hero-container">
+        
+        <!-- Background Video Loop -->
+        <div class="video-background">
+            <iframe id="hero-video"
+                    src="https://player.vimeo.com/video/217581697?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Mute Toggle Icon -->
+        <div id="bg-mute-toggle" class="mute-icon-wrapper">
+            <!-- Default image is muted.png -->
+            <img id="mute-icon" src="muted.png" alt="Mute Toggle">
+        </div>
+
+        <!-- Content Overlay (Title + Nav Buttons) -->
+        <div class="hero-overlay">
+            <div>
+                <h1>irem dogancali</h1>
+                <h2>editor | producer</h2>
+            </div>
             
-            
+            <!-- Restored Pill Buttons -->
+            <div class="nav-container">
+                <a href="#work" class="nav-button">work</a>
+                <a href="#contact" class="nav-button">contact</a>
+                <a href="DOGANCALI_RESUME 2025.pdf" download class="nav-button">resume</a>
+            </div>
         </div>
         
-        <div class="nav-download-container">
-            <div class="button-container">
-                <a href="projects.html" class="nav-button">projects</a>
+    </section>
+
+    <!-- 2. SELECTED WORK SECTION -->
+    <section id="work" class="section-wrapper">
+        <div class="section-header">
+            <div>
+                <h1>projects</h1>
+                <h2>selected works '23 - '25</h2>
             </div>
-            <a href="DOGANCALI_RESUME 2025.pdf" download>
-                <img src="hot-offer.png" alt="Download Resume" class="download-image">
+        </div>
+
+        <!-- The Bento Grid -->
+        <div class="grid-gallery">
+            
+            <!-- Project 1 -->
+            <a href="project.html" class="project-item">
+                <img src="https://placehold.co/600x400/333/fff" alt="Commercial Reel" class="project-thumb">
+                <div class="project-details">
+                    <h3>Commercial Reel '24</h3>
+                    <p>Lead Editor • Premiere Pro</p>
+                </div>
             </a>
-            <div class="button-container">
-                <a href="contact.html" class="nav-button">contact</a>
+
+            <!-- Project 2 -->
+            <a href="project.html" class="project-item">
+                <img src="https://placehold.co/600x400/333/fff" alt="Short Film" class="project-thumb">
+                <div class="project-details">
+                    <h3>Short Film: "Echo"</h3>
+                    <p>Producer & Editor</p>
+                </div>
+            </a>
+
+            <!-- Project 3 -->
+            <a href="project.html" class="project-item">
+                <img src="https://placehold.co/600x400/333/fff" alt="Music Video" class="project-thumb">
+                <div class="project-details">
+                    <h3>Music Video: The Band</h3>
+                    <p>Colorist</p>
+                </div>
+            </a>
+
+             <!-- Project 4 -->
+             <a href="project.html" class="project-item">
+                <img src="https://placehold.co/600x400/333/fff" alt="Documentary" class="project-thumb">
+                <div class="project-details">
+                    <h3>Doc Series</h3>
+                    <p>Assistant Editor</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- 3. CONTACT SECTION -->
+    <section id="contact" class="section-wrapper" style="background: white;"> 
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h1>let's make<br>something<br>great.</h1>
+                <h2 style="margin-top:20px; color:var(--text-muted);">Available for freelance editorial & producing.</h2>
+                <br>
+                <p style="font-family:var(--font-mono);">irem@example.com</p>
             </div>
-            
+
+            <form name="contact" method="POST" data-netlify="true" class="form-style">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
         </div>
-        
-        <div class="video-container">
-            <iframe src="https://player.vimeo.com/video/217581697?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                title="Editing Reel"></iframe>
-        </div>
-    </main>
-    
-    <script src="script.js"></script>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Irem Dogancali</p>
+    </footer>
+
+    <!-- Vimeo Player API -->
     <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+        const iframe = document.querySelector('#hero-video');
+        const player = new Vimeo.Player(iframe);
+        const btn = document.getElementById('bg-mute-toggle');
+        const icon = document.getElementById('mute-icon');
+
+        // Toggle Mute on Click
+        btn.addEventListener('click', function() {
+            player.getMuted().then(function(muted) {
+                player.setMuted(!muted).then(function() {
+                    // If we just unmuted (muted == true before toggle), show unmuted icon
+                    // If we just muted (muted == false before toggle), show muted icon
+                    if (muted) {
+                        // Now sound is ON
+                        icon.src = "icons/unmuted.png";
+                    } else {
+                        // Now sound is OFF
+                        icon.src = "icons/muted.png";
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
