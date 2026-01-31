@@ -622,7 +622,12 @@ footer {
     
     /* HIDE Desktop Nav, SHOW Mobile Toggle */
     .nav-container { display: none; }
-    .mobile-menu-toggle { display: block; }
+    .mobile-menu-toggle { 
+        display: block; 
+        position: absolute; /* Removes it from the flex flow */
+        top: 30px;          /* Distance from the top */
+        left: 20px;         /* Distance from the left */
+    }
     
     /* Reposition Fixed Navbar content for mobile (Logo Left, Burger Right) */
     .navbar-fixed { padding: 20px; }
