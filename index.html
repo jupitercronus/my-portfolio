@@ -61,7 +61,7 @@
         <div class="section-header">
             <div>
                 <h1>projects</h1>
-                <h2>selected works '23 - '25</h2>
+                <h2>selected works</h2>
             </div>
         </div>
 
@@ -145,7 +145,7 @@
         <div class="section-header">
             <div>
                 <h1>about</h1>
-                <h2>the person behind the cut</h2>
+                <h2>irem dogancali</h2>
             </div>
         </div>
         
@@ -222,27 +222,50 @@
         });
 
         // --- 2. HYBRID AUTO-SCROLL (MARQUEE) ---
-        const marquee = document.getElementById('projectMarquee');
-        const track = document.getElementById('track');
-        let isHovered = false;
-        const speed = 1; 
-        
-        function autoScroll() {
-            if (!isHovered) {
-                marquee.scrollLeft += speed;
-                if (marquee.scrollLeft >= (track.scrollWidth / 2)) {
-                    marquee.scrollLeft = 0;
+            const marquee = document.getElementById('projectMarquee');
+            const track = document.getElementById('track');
+            
+            if (marquee && track) {
+                let isHovered = false;
+                const speed = 1; 
+                
+                function autoScroll() {
+                    if (!isHovered) {
+                        marquee.scrollLeft += speed;
+                        // Assuming track has 2 sets of items, reset when scrolled halfway
+                        if (marquee.scrollLeft >= (track.scrollWidth / 2)) {
+                            marquee.scrollLeft = 0;
+                        }
+                    }
+                    requestAnimationFrame(autoScroll);
                 }
+
+                marquee.addEventListener('mouseenter', () => isHovered = true);
+                marquee.addEventListener('mouseleave', () => isHovered = false);
+                marquee.addEventListener('touchstart', () => isHovered = true);
+                marquee.addEventListener('touchend', () => setTimeout(() => isHovered = false, 1000));
+
+                autoScroll();
             }
-            requestAnimationFrame(autoScroll);
-        }
 
-        marquee.addEventListener('mouseenter', () => isHovered = true);
-        marquee.addEventListener('mouseleave', () => isHovered = false);
-        marquee.addEventListener('touchstart', () => isHovered = true);
-        marquee.addEventListener('touchend', () => setTimeout(() => isHovered = false, 1000));
+            // --- 3. HAMBURGER MENU LOGIC ---
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navOverlay = document.querySelector('.mobile-nav-overlay');
+            const navLinks = document.querySelectorAll('.mobile-nav-link');
 
-        autoScroll();
+            if (menuToggle && navOverlay) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    navOverlay.classList.toggle('active');
+                });
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('active');
+                        navOverlay.classList.remove('active');
+                    });
+                });
+            }
     </script>
 
 </body>
