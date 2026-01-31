@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Reel | Irem Dogancali</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAV BAR (Fixed) -->
+    <nav class="navbar-fixed">
+        <a href="index.html" style="font-weight: 900; font-size: 1.2rem;">ID</a>
+        
+        <div class="nav-container" style="margin-top:0;">
+            <a href="index.html#work" class="nav-button">work</a>
+            <a href="index.html#contact" class="nav-button">contact</a>
+        </div>
+    </nav>
+
+    <main class="project-page-wrapper">
+        
+        <!-- VIDEO PLAYER -->
+        <div class="video-embed-container">
+            <!-- Replace with your actual Vimeo/YouTube embed ID -->
+            <!-- Note: "controls=1" enables play/pause/volume for the user -->
+            <iframe src="https://player.vimeo.com/video/217581697?title=0&byline=0&portrait=0" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- INFO GRID -->
+        <div class="project-info-grid">
+            
+            <!-- LEFT: Title & Story -->
+            <div class="project-description">
+                <!-- BACK BUTTON -->
+                <a href="index.html#work" 
+                    class="nav-button" 
+                    style="margin-bottom: 20px; width: fit-content;">
+                    ← back to projects
+                </a>
+                
+                <h1>commercial reel '24</h1>
+                <p>
+                    A fast-paced montage featuring selected works from my commercial portfolio. 
+                    This reel highlights my ability to cut for rhythm and impact, blending sound design 
+                    with visual storytelling to keep engagement high across varying formats.
+                    <br><br>
+                    Includes spots for automotive, fashion, and lifestyle brands.
+                </p>
+            </div>
+
+            <!-- RIGHT: Meta Data -->
+            <div class="project-meta-list">
+                <div class="meta-item">
+                    <label>year</label>
+                    <span>2026</span>
+                </div>
+                <div class="meta-item">
+                    <label>role</label>
+                    <span>Lead Editor, Sound Design</span>
+                </div>
+                <div class="meta-item">
+                    <label>client</label>
+                    <span>Various</span>
+                </div>
+                <div class="meta-item">
+                    <label>tools</label>
+                    <span>Premiere Pro, After Effects</span>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER PLACEHOLDER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Load Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flirty Little Fling Music Video | Irem Dogancali</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAV BAR (Fixed) -->
+    <nav class="navbar-fixed">
+        <a href="index.html" style="font-weight: 900; font-size: 1.2rem;">ID</a>
+        
+        <div class="nav-container" style="margin-top:0;">
+            <a href="index.html#work" class="nav-button">work</a>
+            <a href="index.html#contact" class="nav-button">contact</a>
+        </div>
+    </nav>
+
+    <main class="project-page-wrapper">
+        
+        <!-- VIDEO PLAYER (YouTube Update) -->
+        <div class="video-embed-container">
+            <!-- 
+                YouTube Embed Parameters:
+                - rel=0: Hides related videos from other channels at the end.
+                - controls=1: Shows player controls.
+                - modestbranding=1: Minimal YouTube logo.
+            -->
+            <iframe src="https://www.youtube.com/embed/aahZJZlYhXw?rel=0&controls=1&modestbranding=1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+
+        <!-- INFO GRID -->
+        <div class="project-info-grid">
+            
+            <!-- LEFT: Title & Story -->
+            <div class="project-description">
+                <!-- BACK BUTTON -->
+                <a href="index.html#work" 
+                    class="nav-button" 
+                    style="margin-bottom: 20px; width: fit-content;">
+                    ← back to projects
+                </a>
+
+                <h1>MADDIE - Flirty Little Fling Music Video</h1>
+                <p>
+                    Flirty Little Fling (noun) - A casual, fun, no sleepover situation. 
+                    Something I told you. Something you said you were down, down, down for. 
+                    You want more from me?
+            </div>
+
+            <!-- RIGHT: Meta Data -->
+            <div class="project-meta-list">
+                
+                <div class="meta-item">
+                    <label>year</label>
+                    <span>2025</span>
+                </div>
+
+                <div class="meta-item">
+                    <label>role</label>
+                    <span>Co-Director, Co-Producer, Editor, Sound Design, Color, VFX </span>
+                </div>
+
+                <div class="meta-item">
+                    <label>client</label>
+                    <span>MADDIE</span>
+                </div>
+
+                <div class="meta-item">
+                    <label>tools</label>
+                    <span>Premiere Pro, After Effects, Da Vinci Resolve, Logic Pro X</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER PLACEHOLDER -->
+    <div id="footer-placeholder"></div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Load Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+</body>
+</html>

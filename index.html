@@ -8,10 +8,9 @@
 </head>
 <body>
 
-    <!-- 1. HERO SECTION (Full Screen Video) -->
+    <!-- 1. HERO SECTION -->
     <section id="home" class="hero-container">
         
-        <!-- Background Video Loop -->
         <div class="video-background">
             <iframe id="hero-video"
                     src="https://player.vimeo.com/video/217581697?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1" 
@@ -21,22 +20,20 @@
             </iframe>
         </div>
 
-        <!-- Mute Toggle Icon -->
         <div id="bg-mute-toggle" class="mute-icon-wrapper">
-            <!-- Default image is muted.png -->
-            <img id="mute-icon" src="muted.png" alt="Mute Toggle">
+            <img id="mute-icon" src="icons/muted.png" alt="Mute Toggle">
         </div>
 
-        <!-- Content Overlay (Title + Nav Buttons) -->
         <div class="hero-overlay">
             <div>
                 <h1>irem dogancali</h1>
                 <h2>editor | producer</h2>
             </div>
             
-            <!-- Restored Pill Buttons -->
+            <!-- Pill Buttons (Added 'About' here) -->
             <div class="nav-container">
                 <a href="#work" class="nav-button">work</a>
+                <a href="#about" class="nav-button">about</a>
                 <a href="#contact" class="nav-button">contact</a>
                 <a href="DOGANCALI_RESUME 2025.pdf" download class="nav-button">resume</a>
             </div>
@@ -44,7 +41,7 @@
         
     </section>
 
-    <!-- 2. SELECTED WORK SECTION -->
+    <!-- 2. SELECTED WORK SECTION (HYBRID SCROLL) -->
     <section id="work" class="section-wrapper">
         <div class="section-header">
             <div>
@@ -53,54 +50,115 @@
             </div>
         </div>
 
-        <!-- The Bento Grid -->
-        <div class="grid-gallery">
-            
-            <!-- Project 1 -->
-            <a href="project.html" class="project-item">
-                <img src="https://placehold.co/600x400/333/fff" alt="Commercial Reel" class="project-thumb">
-                <div class="project-details">
-                    <h3>Commercial Reel '24</h3>
-                    <p>Lead Editor • Premiere Pro</p>
-                </div>
-            </a>
+        <!-- Scroll Container with ID for JS -->
+        <div class="marquee-container" id="projectMarquee">
+            <div class="marquee-track" id="track">
+                
+                <!-- Project 1 (LINKS TO REEL.HTML) -->
+                <a href="reel.html" class="project-item">
+                <img src="images/thumb/ID.gif" onerror="this.src='https://placehold.co/600x600/333/fff?text=Reel'" alt="Commercial Reel" class="project-thumb">                    <div class="project-details">
+                        <h3>Commercial Reel</h3>
+                        <p>post-production reel 2026</p>
+                    </div>
+                </a>
 
-            <!-- Project 2 -->
-            <a href="project.html" class="project-item">
-                <img src="https://placehold.co/600x400/333/fff" alt="Short Film" class="project-thumb">
-                <div class="project-details">
-                    <h3>Short Film: "Echo"</h3>
-                    <p>Producer & Editor</p>
-                </div>
-            </a>
+                <!-- Project 2 -->
+               <a href="flf.html" class="project-item">
+                    <img src="https://placehold.co/600x600/333/fff" alt="Music Video" class="project-thumb">
+                    <div class="project-details">
+                        <h3>Flirty Little Fling</h3>
+                        <p>music video</p>
+                    </div>
+                </a>
 
-            <!-- Project 3 -->
-            <a href="project.html" class="project-item">
-                <img src="https://placehold.co/600x400/333/fff" alt="Music Video" class="project-thumb">
-                <div class="project-details">
-                    <h3>Music Video: The Band</h3>
-                    <p>Colorist</p>
-                </div>
-            </a>
+                 <!-- Project 3 -->                 
+                  <a href="msg.html" class="project-item">
+                    <img src="https://placehold.co/600x600/333/fff" alt="Documentary" class="project-thumb">
+                    <div class="project-details">
+                        <h3>Mysterious Savory Grains</h3>
+                        <p>short doc</p>
+                    </div>
+                </a>
 
-             <!-- Project 4 -->
-             <a href="project.html" class="project-item">
-                <img src="https://placehold.co/600x400/333/fff" alt="Documentary" class="project-thumb">
-                <div class="project-details">
-                    <h3>Doc Series</h3>
-                    <p>Assistant Editor</p>
-                </div>
-            </a>
+                 <!-- Project 4 -->
+                <a href="project.html" class="project-item">
+                    <img src="https://placehold.co/600x600/333/fff" alt="Documentary" class="project-thumb">
+                    <div class="project-details">
+                        <h3>RIP, LOL</h3>
+                        <p>short narrative</p>
+                    </div>
+                </a>
 
+                 <!-- Project 5 -->
+                <a href="project.html" class="project-item">
+                    <img src="https://placehold.co/600x600/333/fff" alt="Short Film" class="project-thumb">
+                    <div class="project-details">
+                        <h3>Waiting</h3>
+                        <p>short narrative</p>
+                    </div>
+                </a>
+
+                <!-- Project 6 -->
+                <a href="project.html" class="project-item">
+                    <img src="https://placehold.co/600x600/333/fff" alt="Short Film" class="project-thumb">
+                    <div class="project-details">
+                        <h3>Narrated By</h3>
+                        <p>short narrative</p>
+                    </div>
+                </a>
+
+                <!-- Project 7 -->
+                <a href="project.html" class="project-item">
+                    <img src="https://placehold.co/600x600/333/fff" alt="Short Film" class="project-thumb">
+                    <div class="project-details">
+                        <h3>golden goose awards</h3>
+                        <p>commercial branded</p>
+                    </div>
+                </a>
+
+                
+                <!-- LOOP DUPLICATES -->
+                
+            </div>
         </div>
     </section>
 
-    <!-- 3. CONTACT SECTION -->
-    <section id="contact" class="section-wrapper" style="background: white;"> 
+  <!-- 3. ABOUT SECTION -->
+    <section id="about" class="section-wrapper">
+        <div class="section-header">
+            <div>
+                <h1>about</h1>
+                <h2>the person behind the cut</h2>
+            </div>
+        </div>
+        
+        <div class="about-wrapper">
+            <!-- Photo Placeholder -->
+            <div class="about-photo">
+                <img src="https://placehold.co/400x500/2c3629/f0f0eb" alt="Irem Dogancali">
+            </div>
+
+            <!-- Right: Bio -->
+            <div class="about-text">
+                <p>
+                    I am an editor and producer with a passion for narrative flow and visual rhythm. 
+                    Based in [City], I have spent the last [Number] years working across commercials, 
+                    documentaries, and narrative films, helping brands and directors find the heartbeat of their story.
+                </p>
+                <p>
+                    My approach is collaborative and detailed. Whether it's a 30-second spot or a 
+                    feature-length project, I bring the same level of intensity and care to every frame.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CONTACT SECTION -->
+    <section id="contact" class="section-wrapper"> 
         <div class="contact-wrapper">
             <div class="contact-info">
                 <h1>let's make<br>something<br>great.</h1>
-                <h2 style="margin-top:20px; color:var(--text-muted);">Available for freelance editorial & producing.</h2>
+                <h2 style="margin-top:20px;">Available for freelance editorial & producing.</h2>
                 <br>
                 <p style="font-family:var(--font-mono);">irem@example.com</p>
             </div>
@@ -114,34 +172,60 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Irem Dogancali</p>
-    </footer>
+<!-- FOOTER PLACEHOLDER -->
+    <div id="footer-placeholder"></div>
 
-    <!-- Vimeo Player API -->
+    <!-- SCRIPTS -->
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
+
+        // --- 0. LOAD FOOTER ---
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
+        // --- 1. VIMEO MUTE TOGGLE ---
         const iframe = document.querySelector('#hero-video');
         const player = new Vimeo.Player(iframe);
         const btn = document.getElementById('bg-mute-toggle');
         const icon = document.getElementById('mute-icon');
 
-        // Toggle Mute on Click
         btn.addEventListener('click', function() {
             player.getMuted().then(function(muted) {
                 player.setMuted(!muted).then(function() {
-                    // If we just unmuted (muted == true before toggle), show unmuted icon
-                    // If we just muted (muted == false before toggle), show muted icon
                     if (muted) {
-                        // Now sound is ON
                         icon.src = "icons/unmuted.png";
                     } else {
-                        // Now sound is OFF
                         icon.src = "icons/muted.png";
                     }
                 });
             });
         });
+
+        // --- 2. HYBRID AUTO-SCROLL (MARQUEE) ---
+        const marquee = document.getElementById('projectMarquee');
+        const track = document.getElementById('track');
+        let isHovered = false;
+        const speed = 1; 
+        
+        function autoScroll() {
+            if (!isHovered) {
+                marquee.scrollLeft += speed;
+                if (marquee.scrollLeft >= (track.scrollWidth / 2)) {
+                    marquee.scrollLeft = 0;
+                }
+            }
+            requestAnimationFrame(autoScroll);
+        }
+
+        marquee.addEventListener('mouseenter', () => isHovered = true);
+        marquee.addEventListener('mouseleave', () => isHovered = false);
+        marquee.addEventListener('touchstart', () => isHovered = true);
+        marquee.addEventListener('touchend', () => setTimeout(() => isHovered = false, 1000));
+
+        autoScroll();
     </script>
 
 </body>
