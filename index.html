@@ -194,34 +194,38 @@
 
     <!-- SCRIPTS -->
     <script src="https://player.vimeo.com/api/player.js"></script>
-    <script>
-
-        // --- 0. LOAD FOOTER ---
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-
-        // --- 1. VIMEO MUTE TOGGLE ---
-        const iframe = document.querySelector('#hero-video');
-        const player = new Vimeo.Player(iframe);
-        const btn = document.getElementById('bg-mute-toggle');
-        const icon = document.getElementById('mute-icon');
-
-        btn.addEventListener('click', function() {
-            player.getMuted().then(function(muted) {
-                player.setMuted(!muted).then(function() {
-                    if (muted) {
-                        icon.src = "icons/unmuted.png";
-                    } else {
-                        icon.src = "icons/muted.png";
-                    }
+        <script>
+        // Use DOMContentLoaded to ensure elements exist before script runs
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 0. LOAD FOOTER ---
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
                 });
-            });
-        });
 
-        // --- 2. HYBRID AUTO-SCROLL (MARQUEE) ---
+            // --- 1. VIMEO MUTE TOGGLE ---
+            const iframe = document.querySelector('#hero-video');
+            const btn = document.getElementById('bg-mute-toggle');
+            const icon = document.getElementById('mute-icon');
+
+            if (iframe && btn && icon) {
+                const player = new Vimeo.Player(iframe);
+                btn.addEventListener('click', function() {
+                    player.getMuted().then(function(muted) {
+                        player.setMuted(!muted).then(function() {
+                            if (muted) {
+                                icon.src = "icons/unmuted.png";
+                            } else {
+                                icon.src = "icons/muted.png";
+                            }
+                        });
+                    });
+                });
+            }
+
+            // --- 2. HYBRID AUTO-SCROLL (MARQUEE) ---
             const marquee = document.getElementById('projectMarquee');
             const track = document.getElementById('track');
             
@@ -232,7 +236,6 @@
                 function autoScroll() {
                     if (!isHovered) {
                         marquee.scrollLeft += speed;
-                        // Assuming track has 2 sets of items, reset when scrolled halfway
                         if (marquee.scrollLeft >= (track.scrollWidth / 2)) {
                             marquee.scrollLeft = 0;
                         }
@@ -266,6 +269,7 @@
                     });
                 });
             }
+        }); // <-- THIS was missing in the previous version!
     </script>
 
 </body>
