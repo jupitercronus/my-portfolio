@@ -24,6 +24,21 @@
             <img id="mute-icon" src="icons/muted.png" alt="Mute Toggle">
         </div>
 
+        <!-- HAMBURGER MENU (Visible only on Mobile via CSS) -->
+        <button class="mobile-menu-toggle" aria-label="Open Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <!-- MOBILE MENU OVERLAY -->
+        <div class="mobile-nav-overlay">
+            <a href="#work" class="mobile-nav-link">Work</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+            <a href="DOGANCALI_RESUME 2025.pdf" download class="mobile-nav-link" style="font-size: 1.5rem; border: 1px solid white; padding: 10px 20px; border-radius: 50px;">Resume</a>
+        </div>
+
         <div class="hero-overlay">
             <div>
                 <h1>irem dogancali</h1>
@@ -56,7 +71,8 @@
                 
                 <!-- Project 1 (LINKS TO REEL.HTML) -->
                 <a href="reel.html" class="project-item">
-                <img src="images/thumb/ID.gif" onerror="this.src='https://placehold.co/600x600/333/fff?text=Reel'" alt="Commercial Reel" class="project-thumb">                    <div class="project-details">
+                <img src="images/thumb/ID.gif" onerror="this.src='https://placehold.co/600x600/333/fff?text=Reel'" alt="Commercial Reel" class="project-thumb">                    
+                <div class="project-details">
                         <h3>Commercial Reel</h3>
                         <p>post-production reel 2026</p>
                     </div>
@@ -64,7 +80,8 @@
 
                 <!-- Project 2 -->
                <a href="flf.html" class="project-item">
-                    <img src="https://placehold.co/600x600/333/fff" alt="Music Video" class="project-thumb">
+                <img src="images/thumb/flf.gif" onerror="this.src='https://placehold.co/600x600/333/fff?text=Music Video'" alt="Music Video" class="project-thumb">                    
+                <div class="project-details">
                     <div class="project-details">
                         <h3>Flirty Little Fling</h3>
                         <p>music video</p>
@@ -73,7 +90,7 @@
 
                  <!-- Project 3 -->                 
                   <a href="msg.html" class="project-item">
-                    <img src="https://placehold.co/600x600/333/fff" alt="Documentary" class="project-thumb">
+                    <img src="images/thumb/msg.gif" onerror="this.src='https://placehold.co/600x600/333/fff?text=MSG'" alt="MSG" class="project-thumb">                    
                     <div class="project-details">
                         <h3>Mysterious Savory Grains</h3>
                         <p>short doc</p>
@@ -158,9 +175,9 @@
         <div class="contact-wrapper">
             <div class="contact-info">
                 <h1>let's make<br>something<br>great.</h1>
-                <h2 style="margin-top:20px;">Available for freelance editorial & producing.</h2>
+                <h2 style="margin-top:20px;">Available for freelance editorial and producing.</h2>
                 <br>
-                <p style="font-family:var(--font-mono);">irem@example.com</p>
+                <p style="font-family:var(--font-mono);">irem@snacknight.mov</p>
             </div>
 
             <form name="contact" method="POST" data-netlify="true" class="form-style">
